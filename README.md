@@ -7,5 +7,11 @@
 * Mao的状态转换图<br>
   Mao的状态转移取决于接收的消息，无消息接收是处于WalkOnRoad状态，通过对消息的处理然后跳转到相应的状态。
 ![image](https://github.com/sjaiwl/image_folder/blob/master/chairMao/mao.png)
+* People的状态转换图<br>
+  People的状态跳转取决于随机函数，People个状态间随机跳转。
+![image](https://github.com/sjaiwl/image_folder/blob/master/chairMao/people.png)
+* Guard的状态转换图<br>
+  Guard的状态跳转取决于延迟消息的发送与处理，进行状态间的跳转。
+![image](https://github.com/sjaiwl/image_folder/blob/master/chairMao/guard.png)
 
 ### 3.状态UML类图
