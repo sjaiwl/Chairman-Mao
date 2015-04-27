@@ -6,5 +6,5 @@
 ### 2.人物状态设计
 * Mao的状态转换图<br>
   Mao的状态转移取决于接收的消息，无消息接收是处于WalkOnRoad状态，通过对消息的处理然后跳转到相应的状态。
-
+![image](https://github.com/sjaiwl/image_folder/blob/master/chairMao/mao.png)
 ### 3.状态UML类图
