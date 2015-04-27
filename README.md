@@ -16,7 +16,7 @@
 
 ## 代码实现
 * 人物类的实现（以Mao类为例）
-```
+``` c
 class Mao : public BaseGameEntity
 {
 private:
