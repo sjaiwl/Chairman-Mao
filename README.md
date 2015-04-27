@@ -121,4 +121,4 @@ void CollectInformation::Enter(Guard* pGuard)
 ![image](https://github.com/sjaiwl/image_folder/blob/master/chairMao/test.png)
 
 ## 结果分析
-People能够向Mao发送消息，并且能够实现自己状态间的跳转，同时Mao能够接收并处理消息，实现状态的跳转，Guard能够对自己发送延迟消息和向Mao发送立即消息，并能够处理消息，实现状态的翻转。实验中有限状态机和消息系统都能够发挥作用，实现相应功能。
+People能够向Mao发送消息，并且能够实现自己状态间的跳转，同时Mao能够接收并处理消息，实现状态的跳转，Guard能够对自己发送延迟消息和向Mao发送立即消息，并能够处理消息，实现状态的翻转。有限状态机和消息系统都能够发挥作用，实现相应功能。
