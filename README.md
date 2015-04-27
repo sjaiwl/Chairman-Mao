@@ -14,4 +14,18 @@
   Guard的状态跳转取决于延迟消息的发送与处理，进行状态间的跳转。
 ![image](https://github.com/sjaiwl/image_folder/blob/master/chairMao/guard.png)
 
-### 3.状态UML类图
+## 代码实现
+* 人物类的实现（以Mao类为例）
+```
+class Mao : public BaseGameEntity
+{
+private:
+  StateMachine<Mao>*  m_pStateMachine;
+public:
+  Mao(int id);
+  ~Mao(){delete m_pStateMachine;}
+  void Update();
+  StateMachine<Mao>*  GetFSM()const{return m_pStateMachine;}
+  virtual bool  HandleMessage(const Telegram& msg);
+};
+```
