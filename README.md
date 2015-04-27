@@ -30,7 +30,7 @@ public:
 };
 ```
 * 2.状态类的实现（以MaoOwnedStates中两个接收消息的状态为例）
-```
+``` c
 MaoGlobleState* MaoGlobleState::Instance()
 {
   static MaoGlobleState instance;
@@ -58,7 +58,7 @@ bool MaoGlobleState::OnMessage(Mao* pMao, const Telegram& msg)
 ```
 * 消息系统的添加
   * 立即消息添加（以GuardOwnedStates为例）
-  ```
+  ``` c
   ReportToMao* ReportToMao::Instance()
 {
   static ReportToMao instance;
@@ -77,7 +77,7 @@ void ReportToMao::Enter(Guard* pGuard)
 ......
 ```
   * 延迟消息添加（以GuardOwnedStates为例）
-  ```
+  ``` c
   CollectInformation* CollectInformation::Instance()
 {
   static CollectInformation instance;
@@ -96,7 +96,7 @@ void CollectInformation::Enter(Guard* pGuard)
 ......
 ```
 ## 主函数调用
-```
+``` c
   Mao* mao=new Mao(ent_Chair_Mao);
   People* people=new People(ent_People);
   Guard* guard=new Guard(ent_Guard);
