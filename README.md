@@ -54,8 +54,7 @@ bool MaoGlobleState::OnMessage(Mao* pMao, const Telegram& msg)
 	return true;
    }
   }
-  ...
-  ...
+  ......
 ```
 * 消息系统的添加
   * 立即消息添加（以GuardOwnedStates为例）
@@ -77,4 +76,22 @@ void ReportToMao::Enter(Guard* pGuard)
 }
 ......
 ```
-  * 2)延迟消息添加（以GuardOwnedStates为例）
+  * 延迟消息添加（以GuardOwnedStates为例）
+  ```
+  CollectInformation* CollectInformation::Instance()
+{
+  static CollectInformation instance;
+  return &instance;
+}
+void CollectInformation::Enter(Guard* pGuard)
+{  
+    SetTextColor(FOREGROUND_BLUE| FOREGROUND_INTENSITY);
+    cout << "\n" << GetNameOfEntity(pGuard->ID()) << ": " << "I will go to collect    information";
+	Dispatch->DispatchMessage(1.5,                  //time delay
+                              pGuard->ID(),           //sender ID
+                              pGuard->ID(),           //receiver ID
+                              Msg_ReportToMao,        //msg
+                              NO_ADDITIONAL_INFO);  
+}
+......
+```
