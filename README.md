@@ -29,3 +29,32 @@ public:
   virtual bool  HandleMessage(const Telegram& msg);
 };
 ```
+* 2.状态类的实现（以MaoOwnedStates中两个接收消息的状态为例）
+```
+MaoGlobleState* MaoGlobleState::Instance()
+{
+  static MaoGlobleState instance;
+  return &instance;
+}
+void MaoGlobleState::Enter(Mao* pMao){}
+void MaoGlobleState::Execute(Mao* pMao){}
+void MaoGlobleState::Exit(Mao* pMao){}
+bool MaoGlobleState::OnMessage(Mao* pMao, const Telegram& msg)
+{
+	switch(msg.Msg)
+  {
+	  case Msg_GetReport:
+   {
+       cout << "\nMessage handled by " << GetNameOfEntity(pMao->ID()) << " at time: " 
+       << Clock->GetCurrentTime();
+     SetTextColor(FOREGROUND_GREEN|FOREGROUND_INTENSITY);
+     cout << "\n" << GetNameOfEntity(pMao->ID()) << 
+          ":ChairMao,report to you! ";
+     pMao->GetFSM()->ChangeState(GetReport::Instance());
+	return true;
+   }
+  }
+  ...
+  ...
+```
+
