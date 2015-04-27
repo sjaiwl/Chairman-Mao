@@ -97,7 +97,7 @@ void CollectInformation::Enter(Guard* pGuard)
 ```
 ## 主函数调用
 ```
-Mao* mao=new Mao(ent_Chair_Mao);
+  Mao* mao=new Mao(ent_Chair_Mao);
   People* people=new People(ent_People);
   Guard* guard=new Guard(ent_Guard);
   EntityMgr->RegisterEntity(mao);
@@ -116,3 +116,6 @@ Mao* mao=new Mao(ent_Chair_Mao);
    delete people;
    delete guard;
 ```
+
+## 输出效果图
+![image](https://github.com/sjaiwl/image_folder/blob/master/chairMao/test.png)
